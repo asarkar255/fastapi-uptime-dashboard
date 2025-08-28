@@ -1,74 +1,398 @@
-# List your services here. You can point to Render.com FastAPI apps or any HTTP endpoint.
-services:
-  - name: "Amount Assess LLM Prompt"
-    url: "https://amount-assess-llm-prompt.onrender.com/health"
-    method: "GET"
-    expect_status: 200
-    timeout: 8.0
-    tags: ["staging", "fastapi"]
-    wake_url: "https://amount-assess-llm-prompt.onrender.com/health"
-    wake_method: "POST"
-    wake_body: {"ping": true}
-  - name: "Clean Abap"
-    url: "https://remove-comments-tdec.onrender.com/docs"
-    method: "GET"
-    expect_status: 200
-    timeout: 8.0
-    tags: ["staging", "fastapi"]
-    wake_url: "https://remove-comments-tdec.onrender.com/docs"
-    wake_method: "POST"
-    wake_body: {"ping": true}
-  - name: "Parse Abap"
-    url: "https://abap-parser.onrender.com/docs"
-    method: "GET"
-    expect_status: 200
-    timeout: 8.0
-    tags: ["staging", "fastapi"]
-    wake_url: "https://abap-parser.onrender.com/docs"
-    wake_method: "POST"
-    wake_body: {"ping": true}    
-  - name: "DB Select Rule"
-    url: "https://select-rule.onrender.com/docs"
-    method: "GET"
-    expect_status: 200
-    timeout: 8.0
-    tags: ["staging", "fastapi"]    
-    wake_url: "https://select-rule.onrender.com/docs"
-    wake_method: "POST"
-    wake_body: {"ping": true}        
-  - name: "Matnr Extension Rule"
-    url: "https://matnr-rule.onrender.com/docs"
-    method: "GET"
-    expect_status: 200
-    timeout: 8.0
-    tags: ["staging", "fastapi"]  
-    wake_url: "https://matnr-rule.onrender.com/docs"
-    wake_method: "POST"
-    wake_body: {"ping": true}            
-  - name: "AFLE Extension Rule"
-    url: "https://afle-ddic.onrender.com/docs"
-    method: "GET"
-    expect_status: 200
-    timeout: 8.0
-    tags: ["staging", "fastapi"]    
-    wake_url: "https://afle-ddic.onrender.com/docs"
-    wake_method: "POST"
-    wake_body: {"ping": true}            
-  - name: "Amount Assess LLM Prompt"
-    url: "https://amount-assess-llm-prompt.onrender.com/health"
-    method: "GET"
-    expect_status: 200
-    timeout: 8.0
-    tags: ["staging", "fastapi"]    
-    wake_url: "https://amount-assess-llm-prompt.onrender.com/health"
-    wake_method: "POST"
-    wake_body: {"ping": true}            
-  - name: "db-rule-2198647"
-    url: "https://db-rule-2198647-ba51.onrender.com/health"
-    method: "GET"
-    expect_status: 200
-    timeout: 8.0
-    tags: ["staging", "fastapi"]   
-    wake_url: "https://db-rule-2198647-ba51.onrender.com/health"
-    wake_method: "POST"
-    wake_body: {"ping": true}            
+- name: "Clean Abap"
+  url: "https://remove-comments-tdec.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://remove-comments-tdec.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "Parse Abap"
+  url: "https://abap-parser.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://abap-parser.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "DB Select Rule"
+  url: "https://select-rule.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://select-rule.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "DB Select Rule LLM"
+  url: "https://select-assessment-llm-prompt.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://select-assessment-llm-prompt.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "Matnr Extension Rule"
+  url: "https://matnr-rule.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://matnr-rule.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "Matnr Extension Rule LLM"
+  url: "https://matnr-assesment-llm-promt.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://matnr-assesment-llm-promt.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "AFLE Extension Rule"
+  url: "https://afle-ddic.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://afle-ddic.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "Amount Assess LLM Prompt"
+  url: "https://amount-assess-llm-prompt.onrender.com/health"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://amount-assess-llm-prompt.onrender.com/health"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2198647"
+  url: "https://db-rule-2198647-ba51.onrender.com/health"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2198647-ba51.onrender.com/health"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2198647 LLM"
+  url: "https://db-rule-2198647-llm-xfyu.onrender.com/health"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2198647-llm-xfyu.onrender.com/health"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "ASSESS_ORDERBY_SORT"
+  url: "https://db-rule-select-sort-orderby-r1md.onrender.com/health"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-select-sort-orderby-r1md.onrender.com/health"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+
+- name: "ASSESS_ORDERBY_SORT LLM"
+  url: "https://db-rule-select-sort-orderby-llm-ysiw.onrender.com/health"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-select-sort-orderby-llm-ysiw.onrender.com/health"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2220005"
+  url: "https://db-rule-2220005-vvla.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2220005-vvla.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+
+- name: "db-rule-2220005 LLM"
+  url: "https://db-rule-2220005-llm-jvy9.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2220005-llm-jvy9.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2768887"
+  url: "https://db-rule-2768887-pkoh.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2768887-pkoh.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2768887 LLM"
+  url: "https://db-rule-2768887-assess-llm-smrf.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2768887-assess-llm-smrf.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2877717 "
+  url: "https://db-rule-2877717-mwsc.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2877717-mwsc.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2877717 LLM "
+  url: "https://db-rule-2877717-assess-llm-wtuf.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2877717-assess-llm-wtuf.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2431747"
+  url: "https://db-rule-2431747-ndz6.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2431747-ndz6.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2431747 LLM"
+  url: "https://db-rule-2431747-llm-yir8.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2431747-llm-yir8.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-3404390"
+  url: "https://db-rule-3404390-6lhe.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-3404390-6lhe.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-3404390 LLM"
+  url: "https://db-rule-3404390-llm-1vxm.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-3404390-llm-1vxm.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2267246"
+  url: "https://db-rule-2267246-tmuj.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2267246-tmuj.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2267246 LLM"
+  url: "https://db-rule-2267246-llm-fkkf.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2267246-llm-fkkf.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2378796"
+  url: "https://db-rule-2378796-cdmn.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2378796-cdmn.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2378796 LLM"
+  url: "https://db-rule-2378796-llm-zczd.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2378796-llm-zczd.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-1804812"
+  url: "https://db-rule-1804812-gxyc.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-1804812-gxyc.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-1804812 LLM"
+  url: "https://db-rule-1804812-assess-llm-0lp6.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-1804812-assess-llm-0lp6.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-3320010"
+  url: "https://db-rule-3320010-y1yt.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-3320010-y1yt.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-3320010 LLM"
+  url: "https://db-rule-3320010-assess-llm-21ww.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-3320010-assess-llm-21ww.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2480067"
+  url: "https://db-rule-2480067-zhct.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2480067-zhct.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2480067 LLM"
+  url: "https://db-rule-2480067-assess-llm-324e.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2480067-assess-llm-324e.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2217124"
+  url: "https://db-rule-2217124-86uk.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2217124-86uk.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2217124 LLM"
+  url: "https://db-rule-2217124-assess-llm1-hbu8.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2217124-assess-llm1-hbu8.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-1803189"
+  url: "https://db-rule-1803189-is42.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-1803189-is42.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-1803189 LLM"
+  url: "https://db-rule-1803189-assess-llm-f5dm.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-1803189-assess-llm-f5dm.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "assess-read-stat"
+  url: "https://assess-read-stat-1d7z.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://assess-read-stat-1d7z.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "assess-read-stat LLM"
+  url: "https://assess-read-stat-llm-i6va.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://assess-read-stat-llm-i6va.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2268085"
+  url: "https://db-rule-2268085-9yac.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2268085-9yac.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2268085 LLM"
+  url: "https://db-rule-2268085-assess-llm-ew1g.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2268085-assess-llm-ew1g.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2270335"
+  url: "https://db-rule-2270335-hh9x.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2270335-hh9x.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2270335 LLM"
+  url: "https://db-rule-2270335-assess-llm-z3kz.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2270335-assess-llm-z3kz.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2206980"
+  url: "https://db-rule-2206980-xyzi.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2206980-xyzi.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
+- name: "db-rule-2206980 LLM"
+  url: "https://db-rule-2206980-assess-llm-m1jp.onrender.com/docs"
+  method: "GET"
+  expect_status: 200
+  timeout: 8.0
+  tags: ["staging", "fastapi"]
+  wake_url: "https://db-rule-2206980-assess-llm-m1jp.onrender.com/docs"
+  wake_method: "POST"
+  wake_body: {"ping": true}
