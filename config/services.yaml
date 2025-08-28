@@ -1,0 +1,74 @@
+# List your services here. You can point to Render.com FastAPI apps or any HTTP endpoint.
+services:
+  - name: "Amount Assess LLM Prompt"
+    url: "https://amount-assess-llm-prompt.onrender.com/health"
+    method: "GET"
+    expect_status: 200
+    timeout: 8.0
+    tags: ["staging", "fastapi"]
+    wake_url: "https://amount-assess-llm-prompt.onrender.com/health"
+    wake_method: "POST"
+    wake_body: {"ping": true}
+  - name: "Clean Abap"
+    url: "https://remove-comments-tdec.onrender.com/docs"
+    method: "GET"
+    expect_status: 200
+    timeout: 8.0
+    tags: ["staging", "fastapi"]
+    wake_url: "https://remove-comments-tdec.onrender.com/docs"
+    wake_method: "POST"
+    wake_body: {"ping": true}
+  - name: "Parse Abap"
+    url: "https://abap-parser.onrender.com/docs"
+    method: "GET"
+    expect_status: 200
+    timeout: 8.0
+    tags: ["staging", "fastapi"]
+    wake_url: "https://abap-parser.onrender.com/docs"
+    wake_method: "POST"
+    wake_body: {"ping": true}    
+  - name: "DB Select Rule"
+    url: "https://select-rule.onrender.com/docs"
+    method: "GET"
+    expect_status: 200
+    timeout: 8.0
+    tags: ["staging", "fastapi"]    
+    wake_url: "https://select-rule.onrender.com/docs"
+    wake_method: "POST"
+    wake_body: {"ping": true}        
+  - name: "Matnr Extension Rule"
+    url: "https://matnr-rule.onrender.com/docs"
+    method: "GET"
+    expect_status: 200
+    timeout: 8.0
+    tags: ["staging", "fastapi"]  
+    wake_url: "https://matnr-rule.onrender.com/docs"
+    wake_method: "POST"
+    wake_body: {"ping": true}            
+  - name: "AFLE Extension Rule"
+    url: "https://afle-ddic.onrender.com/docs"
+    method: "GET"
+    expect_status: 200
+    timeout: 8.0
+    tags: ["staging", "fastapi"]    
+    wake_url: "https://afle-ddic.onrender.com/docs"
+    wake_method: "POST"
+    wake_body: {"ping": true}            
+  - name: "Amount Assess LLM Prompt"
+    url: "https://amount-assess-llm-prompt.onrender.com/health"
+    method: "GET"
+    expect_status: 200
+    timeout: 8.0
+    tags: ["staging", "fastapi"]    
+    wake_url: "https://amount-assess-llm-prompt.onrender.com/health"
+    wake_method: "POST"
+    wake_body: {"ping": true}            
+  - name: "db-rule-2198647"
+    url: "https://db-rule-2198647-ba51.onrender.com/health"
+    method: "GET"
+    expect_status: 200
+    timeout: 8.0
+    tags: ["staging", "fastapi"]   
+    wake_url: "https://db-rule-2198647-ba51.onrender.com/health"
+    wake_method: "POST"
+    wake_body: {"ping": true}            

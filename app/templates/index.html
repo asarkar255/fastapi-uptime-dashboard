@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uptime Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body>
+  <header>
+    <h1>Uptime Dashboard</h1>
+    <div class="actions">
+      <button hx-post="/api/refresh" hx-trigger="click" hx-swap="none">Refresh Now</button>
+      <button hx-post="/api/reload" hx-trigger="click" hx-swap="none" title="Reload services.yaml">Reload Config</button>
+    </div>
+  </header>
+
+  <section>
+    <div id="last-updated">Loading…</div>
+    <table id="status-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>URL</th>
+          <th>Status</th>
+          <th>HTTP</th>
+          <th>Latency</th>
+          <th>Tags</th>
+          <th>Last Checked</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </section>
+
+  <script>
+    async function renderRows() {
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+        const tb = document.getElementById('tbody');
+        document.getElementById('last-updated').innerText = 'Last updated: ' + new Date(data.last_updated * 1000).toLocaleString();
+        tb.innerHTML = (data.services || []).map(s => {
+          const status = s.ok ? 'UP' : 'DOWN';
+          const statusClass = s.ok ? 'ok' : 'bad';
+          const code = (s.status_code !== null && s.status_code !== undefined) ? s.status_code : '-';
+          const tags = (s.tags || []).join(', ');
+          const d = s.checked_at ? new Date(s.checked_at * 1000).toLocaleString() : '';
+          const btnClass = s.ok ? 'btn-disabled' : 'btn-wake';
+          const disabled = s.ok ? 'disabled' : '';
+          return `<tr>
+            <td>${s.name || '-'}</td>
+            <td><a href="${s.url}" target="_blank" rel="noopener">${s.url}</a></td>
+            <td class="${statusClass}">${status}</td>
+            <td>${code}</td>
+            <td>${(s.latency_ms ?? '-')} ms</td>
+            <td>${tags}</td>
+            <td>${d}</td>
+            <td><button class="${btnClass}" ${disabled} onclick="wakeService('${s.url}')">Wake</button></td>
+          </tr>`;
+        }).join('');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function wakeService(url) {
+      try {
+        await fetch('/api/wake', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ url })
+        });
+        await renderRows();
+      } catch (e) {
+        console.error('Wake failed', e);
+      }
+    }
+
+    renderRows();
+    setInterval(renderRows, 15000);
+
+    document.body.addEventListener('htmx:afterOnLoad', (evt) => {
+      if (evt.detail.xhr && evt.detail.xhr.response) {
+        renderRows();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: uptime-dashboard
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
